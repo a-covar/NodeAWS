@@ -1,0 +1,16 @@
+{
+  "name": "AWS3",
+  "version": "0.1.1",
+  "description": "AWS Bucket Code testing ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "J.Arturo Covarrubias <a.covar@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.2.0",
+    "jade":"*",
+    "aws-sdk":"*"
+  }
+}
