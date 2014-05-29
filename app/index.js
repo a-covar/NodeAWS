@@ -54,7 +54,7 @@ app.post('/upload',multipartMiddleware,function(req,res) {
 
 });
 
-// AWS LIST BUCKETS
+// AWS LIST BUCKETS FILES 
 
 app.get('/list',function(req,res) {
 	s3.listObjects({Bucket:'acovar.email.upload'},function(err,data) {
@@ -65,6 +65,18 @@ app.get('/list',function(req,res) {
 app.get('/list.json',function(req,res) {
 	s3.listObjects({Bucket:'acovar.email.upload'},function(err,data) {
 		res.json(data);
+	});
+});
+
+//
+
+app.get('/file', function(req,res) {
+	var options={
+		Bucket:"acovar.email.upload",
+		Key:req.param('name')
+	};
+	s3.getObject(options,function(err,data) {
+		res.end(data.Body);
 	});
 });
 
