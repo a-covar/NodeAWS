@@ -6,4 +6,6 @@ block content
 		ul
 			each file in Contents
 				li
-					a(href="/file?name=" + file.Key)= file.Key
+					a(href="/file?name=" + file.Key)= file.Key 
+					li
+						a(href="http://acovar.email.upload.s3.amazonaws.com/" + file.Key)= "Share File Download " + file.Key
