@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.2.0",
+    "body-parser":"*",
     "jade":"*",
-    "aws-sdk":"*"
+    "aws-sdk":"*",
+    "connect-multiparty":"*"
   }
 }
