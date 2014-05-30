@@ -1,4 +1,3 @@
-
 // MODULE REQUIERMENTS
 var aws = require('aws-sdk'),
 	http= require('http'),
@@ -10,8 +9,10 @@ var aws = require('aws-sdk'),
 
 //NEW EXPRESS APP
 var app = new express();
+
 // MIDDLEWARE FOR MULTIPART
 var  multipartMiddleware= multipart();
+
 //SET THE JADE VIEWS
 app.set('views',__dirname + '/views');
 app.set('view engine','jade');
@@ -55,7 +56,6 @@ app.post('/upload',multipartMiddleware,function(req,res) {
 });
 
 // AWS LIST BUCKETS FILES 
-
 app.get('/list',function(req,res) {
 	s3.listObjects({Bucket:'acovar.email.upload'},function(err,data) {
 		res.render('list',data);
@@ -68,8 +68,7 @@ app.get('/list.json',function(req,res) {
 	});
 });
 
-//
-
+//AWS Download Files 
 app.get('/file', function(req,res) {
 	var options={
 		Bucket:"acovar.email.upload",
